@@ -567,7 +567,7 @@ button{
         margin-bottom: 16px;
 }
 
-.footer-container-input-btn {
+.footer-form {
         display: flex;
         gap: 24px;
 }
@@ -579,15 +579,36 @@ button{
         height: 40px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
         background-color: transparent;
+        padding-top: 8px;
+        padding-left: 16px;
+        padding-bottom: 8px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 2;
+        letter-spacing: 0.04em;
+        color: #fff;
 }
 
-.footer-container-button {
-        display: flex;
+.footer-container-input::placeholder {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 2;
+        letter-spacing: 0.04em;
+        color: #fff;
 }
+
+
 
 .footer-container-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 165px;
+        height: 40px;
         position: relative;
         padding: 8px 64px 8px 24px;
+        cursor: pointer;
+        font-family: "Roboto", sans-serif
         font-weight: 500;
         font-size: 16px;
         line-height: 1.5;
@@ -603,6 +624,8 @@ button{
 .footer-container-icon {
         position: absolute;
         fill: #fff;
+        margin-left: 16px;
+        right: 24px;
 }
 
 /* #endregion footer */
@@ -619,7 +642,7 @@ button{
         visibility: hidden;
         opacity: 0;
         pointer-events: none;
-        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition: opasity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);;
         transition-property: visibility, opacity, pointer-events;
 }
 
@@ -640,19 +663,24 @@ button{
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        box-shadow: зі значенням 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn {
         position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         top: 24px;
-        right: 23px;
-        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        right: 24px;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
         padding: 0;
-        border: 0;
+        border: 1px solid rgba(0, 0, 0, 0.1);
         line-height: 0;
         stroke: #2e2f42;
         background-color: #e7e9fc;
-        border-radius: 100%;
+        border-radius: 50%;
         width: 24px;
         height: 24px;
         /* stroke-width: 1px;
@@ -685,7 +713,7 @@ button{
 .modal-form-label {
         font-weight: 400;
         font-size: 12px;
-        line-height: 1.16;
+        line-height: 1.17;
         letter-spacing: 0.04em;
         color: #8e8f99;
         display: block;
@@ -703,6 +731,7 @@ button{
         border-radius: 4px;
         padding-left: 38px;
         outline: transparent;
+        background-color: transparent;transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form-input:focus {
@@ -715,6 +744,7 @@ button{
         left: 16px;
         fill: #2e2f42;
         transform: translateY(-50%);
+        transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form-input:focus + .modal-form-icon{
@@ -733,32 +763,40 @@ button{
         border-radius: 4px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
         background: #4d5ae5;
-        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
         display: block;
         margin: 0 auto;
+        min-width: 169px;
 }
 
 .cont-user-textarea {
         margin-bottom: 16px;
 }
 
-.user-coment {
-        padding-top: 8px;
-        padding-left: 16px;
+.user-comment {
+        padding: 8px 16px;
         border: 1px solid rgba(46, 47, 66, 0.4);
         border-radius: 4px;
         width: 360px;
         height: 120px;
         resize: none;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.17;
+        letter-spacing: 0.04em;
+        color: rgba(46, 47, 66, 0.4);
+        background-color: transparent;
+        outline: transparent;
+        transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
-.user-coment:focus {
+.user-comment:focus {
         border: 1px solid #4d5ae5;
         outline: transparent;
 }
 
-.user-coment::placeholder {
+.user-comment::placeholder {
         font-weight: 400;
         font-size: 12px;
         line-height: 1.16;
@@ -780,13 +818,15 @@ button{
         align-items: center;
         background-color: transparent;
         margin-right: 8px;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        fill: transparent;
 }
 
 .label-checkbox {
         cursor: pointer;
         font-weight: 400;
         font-size: 12px;
-        line-height: 1.16667;
+        line-height: 1.17;
         letter-spacing: 0.04em;
         color: #8e8f99;
 }
@@ -799,6 +839,7 @@ button{
 .checkbox:checked + .label-checkbox .custom-checkbox {
         border-radius: 2px;
         background-color: #404bbf;
+        border: none;
         border: 1px solid #404bbf;
         fill: #f4f4fd;
 }
